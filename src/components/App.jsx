@@ -1,35 +1,43 @@
-import React, { useEffect, useState } from 'react'
-import '../style/index.css'
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-const App = () => {
-  const [pokemon, setPokemon] = useState([])
+import Products from "./Products";
+import SingleProduct from "./SingleProduct";
+import Login from "./Login";
+import Navigations from "./Navigations";
+import SignUp from "./SignUp";
+import Cart from "./Carts";
+
+function App() {
+  const [token, setToken] = useState(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const getAllData = async () => {
-      try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20')
-        const { results } = await response.json()
-        setPokemon(results)
-      } catch (err) {
-        console.error(err)
-      }
-    }
-    getAllData()
-  }, [])
-
+    const localToken = localStorage.getItem("token");
+    if (localToken !== undefined) setToken(localToken);
+  }, []);
   return (
-    <div>
-      <p>Hello World</p>
-      {!!pokemon.length &&
-        pokemon.map((el, i) => {
-          return (
-            <div key={i}>
-              <h1>{el.name}</h1>
-            </div>
-          )
-        })}
-    </div>
-  )
+    <>
+      <h1>App</h1>
+      <Navigations
+        token={token}
+        setToken={setToken}
+        user={user}
+        setUser={setUser}
+      />
+
+      <Routes>
+        <Route
+          path="/login"
+          element={<Login setToken={setToken} setUser={setUser} />}
+        />
+        <Route path="/" element={<Products />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/cart" element={<Cart user={user} />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;
