@@ -47,7 +47,7 @@ export default function Login({ setToken, token, setUser }) {
           />
         </label>
         <button>Login</button>
-        <Link to="/"></Link>
+        <Link to="/Sign Up">Don't have an account? Click here to sign up!</Link>
       </form>
     </>
   );

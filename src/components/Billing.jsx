@@ -2,7 +2,7 @@ import { useState } from "react";
 import { signUpUser } from "../API/login";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function SignUp() {
+export default function Billing() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -130,10 +130,8 @@ export default function SignUp() {
             onChange={(event) => setPhone(event.target.value)}
           />
         </label>
-        <div className="signup-button">
-          <button>Register</button>
-          <Link to="/signUp"></Link>
-        </div>
+        <button>Register</button>
+        <Link to="/signUp"></Link>
       </form>
     </>
   );

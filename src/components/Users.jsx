@@ -18,13 +18,4 @@ export default function Users() {
     }
     loadUser();
   }, []);
-
-  //   return (
-  //     // <div>
-  //     //   {users.map((users, index) => {
-  //     //     return;
-  //     //   })}
-  //     // </div>
-  //   );
 }
-//do we need to display anything? for the return

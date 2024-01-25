@@ -21,7 +21,6 @@ export default function Products() {
 
   return (
     <div className="product-container">
-      <h1>All Products</h1>
       {products.map((products, index) => {
         return (
           <div
@@ -32,7 +31,6 @@ export default function Products() {
             <h5>{products.title}</h5>
             <img alt="products" width="200" src={products.image} />
             <p>Category: {products.category}</p>
-            {/* <p>Description: {products.description}</p> */}
             <p>Id: {products.id}</p>
             <p>Price: {products.price}</p>
           </div>

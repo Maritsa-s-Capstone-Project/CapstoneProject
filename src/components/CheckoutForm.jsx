@@ -1,21 +1,15 @@
-import { useState } from "react";
-import { signUpUser } from "../API/login";
-import { Link, useNavigate } from "react-router-dom";
-
-export default function SignUp() {
+export default function CheckoutForm() {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
   const [number, setNumber] = useState("");
   const [zipcode, setZipcode] = useState("");
-  const [lat, setLat] = useState("");
-  const [long, setLong] = useState("");
   const [phone, setPhone] = useState("");
-
+  const [cardnumber, setCardnumber] = useState("");
+  const [expdate, setExpdate] = useState("");
+  const [securitycode, SetSecuritycode] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -55,21 +49,7 @@ export default function SignUp() {
             onChange={(event) => setEmail(event.target.value)}
           />
         </label>
-        <label>
-          username:
-          <input
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </label>
-        <label>
-          password:
-          <input
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
+
         <label>
           firstname:
           <input
@@ -112,22 +92,33 @@ export default function SignUp() {
             onChange={(event) => setZipcode(event.target.value)}
           />
         </label>
-        <label>
-          lat:
-          <input value={lat} onChange={(event) => setLat(event.target.value)} />
-        </label>
-        <label>
-          long:
-          <input
-            value={long}
-            onChange={(event) => setLong(event.target.value)}
-          />
-        </label>
+
         <label>
           phone:
           <input
             value={phone}
             onChange={(event) => setPhone(event.target.value)}
+          />
+        </label>
+        <label>
+          card number:
+          <input
+            value={cardnumber}
+            onChange={(event) => setCardnumber(event.target.value)}
+          />
+        </label>
+        <label>
+          exp date:
+          <input
+            value={expdate}
+            onChange={(event) => setExpdate(event.target.value)}
+          />
+        </label>
+        <label>
+          security code:
+          <input
+            value={securitycode}
+            onChange={(event) => SetSecuritycode(event.target.value)}
           />
         </label>
         <div className="signup-button">
