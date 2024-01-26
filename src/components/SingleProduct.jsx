@@ -22,7 +22,6 @@ export default function SingleProduct({ setCart }) {
 
   function addToCart() {
     const cartInStorage = JSON.parse(localStorage.getItem("cart"));
-    console.log(cartInStorage);
     //check if item is in cart
     const result = cartInStorage.find((item) => item.id == params.id);
     if (!result) {
@@ -41,11 +40,11 @@ export default function SingleProduct({ setCart }) {
   return (
     product && (
       <div
-        className="product-info"
+        className="singleproduct-info"
         onClick={() => navigate(`/products/${product.id}`)}
       >
         <h4>{product.title}</h4>
-        <img width={200} src={product.image} />
+        <img src={product.image} />
         <p>Category: {product.category}</p>
         <p>Description: {product.description}</p>
         <p>Id: {product.id}</p>

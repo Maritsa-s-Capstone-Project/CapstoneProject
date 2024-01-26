@@ -1,6 +1,7 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #c6d166;
 }
 .product-container {
   display: flex;
@@ -13,13 +14,43 @@ body {
 .product-info {
   border: 2px solid black;
   margin: 0 auto;
+  width: 350px;
+  height: 450px;
+}
+
+.product-info img {
+  width: 40%;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.singleproduct-info {
+  border: 2px solid black;
+  margin: 0 auto;
+  width: 350px;
+  height: auto;
+  text-align: center;
+}
+
+.singleproduct-info img {
+  width: 40%;
+  height: auto;
+  border: 2px solid #000;
+}
+.singleproduct-info button {
+  background-color: #5c821a;
+}
+
+.cartproduct-container {
+  text-align: center;
 }
 
 .signUp-container {
   text-align: center;
   display: flex;
   flex-direction: column;
-  max-width: 800 px;
+  max-width: 400px;
+  margin: 0 auto;
   margin-bottom: 5px;
   border: 2px solid black;
 }
@@ -28,6 +59,9 @@ body {
   margin-bottom: 10px;
 }
 
+.logo-container {
+  background-color: #ffffff;
+}
 .nav-bar {
   position: absolute;
   padding: 50px;
@@ -49,11 +83,11 @@ body {
   justify-content: space-between;
   text-align: center;
   height: 30px;
-  background-color: #004aad;
+  background-color: #0f1b07;
 }
 
 .second-nav-bar a {
-  color: white;
+  color: #ffffff;
 }
 
 .third-nav-bar {
@@ -68,7 +102,7 @@ body {
 }
 
 .dropbtn {
-  background-color: transparent;
+  background-color: #5c821a;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -78,7 +112,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -101,4 +135,30 @@ body {
 .logo-container {
   top: 5px;
   left: 5px;
+}
+
+.thankyou {
+  text-align: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
+
+.loginbtn {
+  background-color: #5c821a;
+}
+
+.signuplink {
+  display: flex;
+  justify-content: center;
+}
+
+.total-container button {
+  background-color: #5c821a;
+}
+
+button {
+  background-color: #5c821a;
 }

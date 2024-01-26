@@ -49,6 +49,7 @@ export default function SignUp() {
     <>
       <form className="signUp-container" onSubmit={handleSubmit}>
         <label>
+          <h2>Give us your info:</h2>
           email:
           <input
             value={email}

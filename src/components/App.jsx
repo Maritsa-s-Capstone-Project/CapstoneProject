@@ -16,6 +16,8 @@ import MensClothing from "./MensClothing";
 import WomensClothing from "./WomensClothing";
 import SortPrice from "./SortPrice";
 import SortHighPrice from "./SortHighPrice";
+import CheckoutForm from "./CheckoutForm";
+import Thankyou from "./Thankyou";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -51,6 +53,7 @@ function App() {
         console.log(err);
       }
     }
+
     loadCart();
   }, [user]);
 
@@ -65,7 +68,7 @@ function App() {
         setToken={setToken}
         user={user}
         setUser={setUser}
-        cartCount={cart.length}
+        cart={cart}
       />
 
       <Routes>
@@ -79,7 +82,10 @@ function App() {
           element={<SingleProduct setCart={setCart} />}
         />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/cart" element={<Cart user={user} cart={cart} />} />
+        <Route
+          path="/cart"
+          element={<Cart user={user} cart={cart} setCart={setCart} />}
+        />
         <Route path="/sort" element={<Sort />} />
         <Route path="/jewelry" element={<Jewlery />} />
         <Route path="/electronics" element={<Electronics />} />
@@ -87,6 +93,8 @@ function App() {
         <Route path="/womensclothing" element={<WomensClothing />} />
         <Route path="/sortlowerprice" element={<SortPrice />} />
         <Route path="/sorthigherprice" element={<SortHighPrice />} />
+        <Route path="/checkout" element={<CheckoutForm />} />
+        <Route path="/thankyou" element={<Thankyou />} />
       </Routes>
     </>
   );

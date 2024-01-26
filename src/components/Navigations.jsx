@@ -1,15 +1,28 @@
 import { Link } from "react-router-dom";
 import shoppingbag from "../assets/shoppingbag.png";
 import logo2 from "../assets/logo2.png";
+import { useEffect, useState } from "react";
 
-export default function Navigations({ token, setToken, setUser, cartCount }) {
+export default function Navigations({ token, setToken, setUser, cart }) {
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    if (cart) {
+      const cartItemsTotal = cart.reduce((total, item) => {
+        return (total += item.quantity);
+      }, 0);
+      setCartCount(cartItemsTotal);
+    }
+  }, [cart]);
+
   return (
-    <div>
+    <div className="nav-bar-container">
       <div className="logo-container">
         <Link to="/">
           <img width="100" src={logo2} alt="logo" />
         </Link>
       </div>
+
       <nav className="nav-bar">
         {!token && <Link to="/login">Login</Link>}
         {token && (

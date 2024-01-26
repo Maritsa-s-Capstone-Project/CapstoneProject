@@ -30,7 +30,7 @@ export default function Login({ setToken, token, setUser }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="login" onSubmit={handleSubmit}>
         <label>
           Username:
           <input
@@ -46,9 +46,11 @@ export default function Login({ setToken, token, setUser }) {
             onChange={(event) => setPassword(event.target.value)}
           />
         </label>
-        <button>Login</button>
-        <Link to="/Sign Up">Don't have an account? Click here to sign up!</Link>
+        <button className="login-btn">Login</button>
       </form>
+      <div className="signuplink">
+        <Link to="/Sign Up">Don't have an account? Click here to sign up!</Link>
+      </div>
     </>
   );
 }

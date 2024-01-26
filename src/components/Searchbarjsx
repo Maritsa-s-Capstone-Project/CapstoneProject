@@ -1,0 +1,12 @@
+// import { useState } from "react";
+// export default function Searchbar() {
+//   function handleSearch() {
+//     const searchResults = products.filter((product) =>
+//       product.title.toLowerCase().includes(e.target.value.toLowerCase())
+//     );
+//     setProducts(searchResults);
+//   }
+//   return (
+
+//   );
+// }

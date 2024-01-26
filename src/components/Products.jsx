@@ -29,7 +29,7 @@ export default function Products() {
             onClick={() => navigate(`/products/${products.id}`)}
           >
             <h5>{products.title}</h5>
-            <img alt="products" width="200" src={products.image} />
+            <img alt="products" src={products.image} />
             <p>Category: {products.category}</p>
             <p>Id: {products.id}</p>
             <p>Price: {products.price}</p>

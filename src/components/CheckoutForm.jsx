@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router";
 export default function CheckoutForm() {
   const [email, setEmail] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -35,15 +37,16 @@ export default function CheckoutForm() {
       phone,
     };
 
-    const nextToken = await signUpUser(userObj);
-    return nextToken;
+    // const nextToken = await signUpUser(userObj);
+    // return nextToken;
   };
 
   return (
     <>
       <form className="signUp-container" onSubmit={handleSubmit}>
         <label>
-          email:
+          <h2>Shipping Address</h2>
+          Email:
           <input
             value={email}
             onChange={(event) => setEmail(event.target.value)}
@@ -51,42 +54,42 @@ export default function CheckoutForm() {
         </label>
 
         <label>
-          firstname:
+          Firstname:
           <input
             value={firstname}
             onChange={(event) => setFirstname(event.target.value)}
           />
         </label>
         <label>
-          lastname:
+          Lastname:
           <input
             value={lastname}
             onChange={(event) => setLastname(event.target.value)}
           />
         </label>
         <label>
-          city:
+          City:
           <input
             value={city}
             onChange={(event) => setCity(event.target.value)}
           />
         </label>
         <label>
-          street:
+          Street:
           <input
             value={street}
             onChange={(event) => setStreet(event.target.value)}
           />
         </label>
         <label>
-          number:
+          Number:
           <input
             value={number}
             onChange={(event) => setNumber(event.target.value)}
           />
         </label>
         <label>
-          zipcode:
+          Zipcode:
           <input
             value={zipcode}
             onChange={(event) => setZipcode(event.target.value)}
@@ -94,36 +97,36 @@ export default function CheckoutForm() {
         </label>
 
         <label>
-          phone:
+          Phone:
           <input
             value={phone}
             onChange={(event) => setPhone(event.target.value)}
           />
         </label>
         <label>
-          card number:
+          <h2>Card Information</h2>
+          Card Number:
           <input
             value={cardnumber}
             onChange={(event) => setCardnumber(event.target.value)}
           />
         </label>
         <label>
-          exp date:
+          Exp Date:
           <input
             value={expdate}
             onChange={(event) => setExpdate(event.target.value)}
           />
         </label>
         <label>
-          security code:
+          Security Code:
           <input
             value={securitycode}
             onChange={(event) => SetSecuritycode(event.target.value)}
           />
         </label>
         <div className="signup-button">
-          <button>Register</button>
-          <Link to="/signUp"></Link>
+          <button onClick={() => navigate(`/thankyou`)}>CHECK OUT</button>
         </div>
       </form>
     </>
