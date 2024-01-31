@@ -36,9 +36,6 @@ export default function CheckoutForm() {
       },
       phone,
     };
-
-    // const nextToken = await signUpUser(userObj);
-    // return nextToken;
   };
 
   return (

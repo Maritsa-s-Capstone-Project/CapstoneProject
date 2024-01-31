@@ -49,7 +49,7 @@ export default function Login({ setToken, token, setUser }) {
         <button className="login-btn">Login</button>
       </form>
       <div className="signuplink">
-        <Link to="/Sign Up">Don't have an account? Click here to sign up!</Link>
+        <Link to="/Signup">Don't have an account? Click here to sign up!</Link>
       </div>
     </>
   );
