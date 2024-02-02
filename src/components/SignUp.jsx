@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signUpUser } from "../API/login";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -42,6 +42,7 @@ export default function SignUp() {
     };
 
     const nextToken = await signUpUser(userObj);
+    navigate("/");
     return nextToken;
   };
 
@@ -132,8 +133,7 @@ export default function SignUp() {
           />
         </label>
         <div className="signup-button">
-          <button>Register</button>
-          <Link to="/signUp"></Link>
+          <button type="submit">Register</button>
         </div>
       </form>
     </>
